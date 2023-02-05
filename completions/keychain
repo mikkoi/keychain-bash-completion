@@ -11,7 +11,7 @@ __keychain_ssh_keys() {
         while IFS= read -r -d '' file; do
             key="$(basename -s .pub "$file")"
             keys+=( "$key" )
-        done < <(\find "${USER}/.ssh" -type f -name \*.pub -print0)
+        done < <(\find "${HOME}/.ssh" -type f -name \*.pub -print0)
         echo "${keys[*]}"
     fi
 }
